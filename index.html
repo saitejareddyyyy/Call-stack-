@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telangana Tourism Guide (Code COMPany)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #5e2a84;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        header h1 {
+            font-size: 2.5em;
+        }
+        #search-section {
+            text-align: center;
+            margin: 20px;
+        }
+        #search {
+            padding: 10px;
+            font-size: 1.2em;
+            width: 60%;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #5e2a84;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #9b59b6;
+        }
+        #tourist-spots {
+            margin-top: 40px;
+            text-align: center;
+        }
+        #tourist-spots h2 {
+            font-size: 2em;
+        }
+        #places-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        #places-list li {
+            background-color: #fff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        #ai-description {
+            margin-top: 40px;
+            text-align: center;
+            background-color: #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Telangana Tourism Guide</h1>
+    <p>Explore the wonders of Telangana with Code COMPany insights.</p>
+</header>
+
+<section id="search-section">
+    <input type="text" id="search" placeholder="Search for tourist spots...">
+    <button onclick="searchPlace()">Search</button>
+</section>
+
+<section id="Code COMPany-description">
+    <h2>Code COMPany Recommendations</h2>
+    <p id="Code COMPany">Start typing to get personalized Code COMPany suggestions for your next trip in Telangana!</p>
+</section>
+
+<section id="tourist-spots">
+    <h2>Popular Tourist Spots</h2>
+    <ul id="places-list">
+        <!-- Tourist spots will be dynamically populated here -->
+    </ul>
+</section>
+
+<footer>
+    <p>&copy; 2025 Telangana Tourism Guide | Code COMPany</p>
+</footer>
+
+<script>
+// Static tourist spots data
+const touristSpots = [
+    { name: "Charminar", description: "A historical mosque and landmark of Hyderabad, famous for its grand architecture." },
+    { name: "Golconda Fort", description: "A historic fort known for its acoustics and the beauty of its architecture." },
+    { name: "Hussain Sagar Lake", description: "A large artificial lake, offering boat rides and views of the Buddha statue." },
+    { name: "Falaknuma palace", description: "Falaknuma palace is a former palace and currently a luxury hotel in Hyderabad, Telangana, India.[3][4] It originally belonged to the Paigah family, and was later owned by the Nizam of Hyderabad.Prime Minister of Hyderabad state and the uncle and brother-in-law of the sixth Nizam.",
+     },
+    { name: "Ramoji Film City", description: "A large film studio complex with movie sets, theme parks, and live shows." }
+
+
+
+
+
+    ]
+    
+
+
+
+
+
+// Function to display tourist spots
+function displayTouristSpots(spots) {
+    const spotsList = document.getElementById("places-list");
+    spotsList.innerHTML = ''; // Clear the current list
+    spots.forEach(spot => {
+        const li = document.createElement('li');
+        li.innerHTML = `<h3>${spot.name}</h3><p>${spot.description}</p>`;
+        spotsList.appendChild(li);
+    });
+}
+
+// Function to handle search
+function searchPlace() {
+    const searchQuery = document.getElementById("search").value.toLowerCase();
+    const filteredSpots = touristSpots.filter(spot =>
+        spot.name.toLowerCase().includes(searchQuery) || spot.description.toLowerCase().includes(searchQuery)
+    );
+    
+    displayTouristSpots(filteredSpots);
+    
+    // Display AI recommendations (Mocked AI response)
+    const aiText = document.getElementById("code company");
+    if (searchQuery) {
+        aiText.innerText = `AI suggests: You might enjoy exploring places like ${filteredSpots.map(spot => spot.name).join(", ")}.`;
+    } else {
+        aiText.innerText = "Start typing to get personalized code company!";
+    }
+}
+
+// Initial load of all tourist spots
+displayTouristSpots(touristSpots);
+</script>
+<img src="C:\Users\student\Downloads\taj-falaknuma-palace-12987-scaled.jpg"
+width="300px" height="200px">
+<img src="C:\Users\student\Downloads\ramoji-film-city-hyderabad-768x467.jpg"
+width="300px" height="200px">
+<img src="C:\Users\student\Downloads\jpg.webp"
+width="300px" height="200px">
+<img src="C:\Users\student\Downloads\0b.jpg"
+width="300px" height="200px">
+<img src="C:\Users\student\Downloads\Charminar_Hyderabad_1.jpg"
+width="300px" height="200px">
+<head>Charminar</head>
+
+</body>
+</html>
